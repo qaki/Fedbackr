@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "functions": {
+    "api/**.ts": {
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/reviews-sync",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron/alerts-daily",
+      "schedule": "0 9 * * *"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}
